@@ -14,5 +14,5 @@ public class sql {
     public static final String allCustomers_LimitOffset = "SELECT * FROM customer LIMIT ? OFFSET ?";
     public static final String deleteCustomer = "DELETE FROM customer WHERE id = ?";
     public static final String updateCustomer = "UPDATE customer set customer_name = ?, email = ? WHERE id =?";
-    public static final String insertCustomer = "INSERT INTO customer(customer_name,email) values(? ,)";
+    public static final String insertCustomer = "INSERT INTO customer(customer_name,email) values(? ,?)";
 }

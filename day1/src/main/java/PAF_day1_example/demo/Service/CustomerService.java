@@ -22,7 +22,7 @@ public class CustomerService {
     }
 
     public Customer getCustomerById(int id){
-        return customerRepository.getcCustomerById(id);
+        return customerRepository.getCustomerById(id);
     }
 
     public Boolean deleteCustomer(int id){

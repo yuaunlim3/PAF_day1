@@ -1,5 +1,5 @@
 # create database vttp_2025;
-# use vttp_2025;
+#use vttp_2025;
 
 #drop table tv_shows;
 /*
@@ -69,6 +69,59 @@ insert into tv_shows(title,lang,rating,user_rating,release_date)
            values('James Bond','English','M18','7.7','2025-05-11');
 */
 #select * from tv_shows where user_rating > 5.0 and rating in ('M18','G');
+/*
+create table room(
+	id int not null auto_increment,
+    room_type varchar(150) not null,
+    price float default '100.0',
+    constraint pk_room_id primary key (id)
+);
+
+create table customer(
+	id int not null auto_increment,
+    customer_name varchar(255) not null,
+    email varchar(225) not null,
+    constraint pk_customer_id primary key(id)
+);
+
+
+create table reservation(
+	id int not null auto_increment,
+    start_date date,
+    end_date date,
+    cost float,
+    customer_id int,
+    room_id int,
+    constraint pk_reservation_id primary key (id),
+    constraint fk_customer_id foreign key (customer_id) REFERENCES customer(id),
+    constraint fk_room_id foreign key (room_id) REFERENCES room(id)
+);
+
+
+insert into room(room_type,price)
+			values('standard','150.0');
+insert into room(room_type,price)
+			values('suite','550.0');
+insert into room(room_type,price)
+			values('deluxe','250.0');
+insert into room(room_type,price)
+			values('super deluxe','350.0');
+insert into room(room_type,price)
+			values('president','400.0');
+
+
+            
+insert into customer(customer_name,email) values('Bob', 'bob@gmail.com');
+insert into customer(customer_name,email) values('Fred', 'fred@gmail.com');
+insert into customer(customer_name,email) values('Banny', 'banny@gmail.com');
+
+insert into customer(customer_name,email) values('Tom', 'tom@gmail.com');
+insert into customer(customer_name,email) values('John', 'john@gmail.com');
+insert into customer(customer_name,email) values('Tim', 'tim@gmail.com');
+*/
+
+#select * from room;
+
 
 
 

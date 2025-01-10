@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -63,7 +64,7 @@ public class CustomerRestController {
     public ResponseEntity<List<Customer>> updateCustomer(@PathVariable("Id") int id,
             @RequestBody Customer customer) {
                 System.out.println(customer.toString());
-        boolean updateSuccess = customerService.updateCustomer(id, customer.getFullName(), customer.getEmail());
+        boolean updateSuccess = customerService.updateCustomer(id, customer.getCustomerName(), customer.getEmail());
 
         if (updateSuccess) {
             List<Customer> customers = customerService.getAllCustomer();
@@ -74,9 +75,9 @@ public class CustomerRestController {
     }
 
     
-    @PutMapping("/insert")
+    @PostMapping("/insert")
     public ResponseEntity<List<Customer>> insertCustomer(@RequestBody Customer customer) {
-        boolean insertSuccess = customerService.insertCustomer(customer.getFullName(), customer.getEmail());
+        boolean insertSuccess = customerService.insertCustomer(customer.getCustomerName(), customer.getEmail());
 
         if (insertSuccess) {
             List<Customer> customers = customerService.getAllCustomer();

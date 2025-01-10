@@ -2,7 +2,7 @@ package PAF_day1_example.demo.Model;
 
 public class Customer {
     private int id;
-    private String fullName;
+    private String customerName;
     private String email;
     
 
@@ -12,11 +12,11 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-    public String getFullName() {
-        return fullName;
+    public String getCustomerName() {
+        return customerName;
     }
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setCustomerName(String  customerName) {
+        this. customerName =  customerName;
     }
     public String getEmail() {
         return email;
@@ -26,7 +26,7 @@ public class Customer {
     }
     @Override
     public String toString() {
-        return "Customer [id=" + id + ", fullName=" + fullName + ", email=" + email + "]";
+        return "Customer [id=" + id + ",  customerName=" +  customerName + ", email=" + email + "]";
     }
     
 }
